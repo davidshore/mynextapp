@@ -3,7 +3,7 @@ import excuteQuery from "../../lib/db";
 
 export default async function handler(req, res) {
   const sql = {
-    query: "SELECT * from USERS",
+    query: "SELECT * from users",
   };
 
   const result = await excuteQuery(sql);

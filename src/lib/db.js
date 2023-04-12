@@ -6,6 +6,7 @@ const db = mysql({
     database: "test",
     user: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
+    ssl: { rejectUnauthorized: true },
   },
 });
 
@@ -18,6 +19,7 @@ export default async function excuteQuery({ query, values }) {
     await db.end();
     return results;
   } catch (error) {
+    console.log(error);
     return { error };
   }
 }
