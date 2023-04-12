@@ -9,11 +9,12 @@ const db = mysql({
   },
 });
 
-console.log("user", process.env.DB_USERNAME);
+console.log("db", db);
 
 export default async function excuteQuery({ query, values }) {
   try {
     const results = await db.query(query, values);
+    console.log("db results", results);
     await db.end();
     return results;
   } catch (error) {
