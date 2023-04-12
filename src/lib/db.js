@@ -3,7 +3,7 @@ import mysql from "serverless-mysql";
 const db = mysql({
   config: {
     host: process.env.DB_HOST,
-    database: "swedbank",
+    database: "test",
     user: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
   },
